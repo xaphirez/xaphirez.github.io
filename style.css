@@ -1,0 +1,222 @@
+/* =========================================
+   SINANJU COMMAND INTERFACE - FULL CSS
+   Dark Crimson + Royal Gold Theme
+   Elegant • Powerful • Readable
+========================================= */
+
+/* ===== GOOGLE FONT SUPPORT (make sure added in HTML head) ===== */
+/* 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+*/
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0b0b0f;
+    color: #e8e8e8;
+    line-height: 1.7;
+    padding: 60px 20px;
+    overflow-x: hidden;
+}
+
+/* ===== ENERGY FLOW LINE (TOP) ===== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #b11226,
+        #d4af37,
+        #b11226,
+        transparent
+    );
+    animation: energyFlow 6s linear infinite;
+}
+
+@keyframes energyFlow {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
+}
+
+/* ===== LAYOUT WIDTH ===== */
+main, header {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+/* ===== NAME (MONO-EYE PULSE) ===== */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    color: #b11226;
+    letter-spacing: 1px;
+    animation: monoEye 3s ease-in-out infinite alternate;
+}
+
+@keyframes monoEye {
+    0% { text-shadow: 0 0 8px rgba(177,18,38,0.4); }
+    100% { text-shadow: 0 0 20px rgba(177,18,38,0.9); }
+}
+
+/* ===== ROLE ===== */
+h2 {
+    font-weight: 300;
+    color: #c9c9c9;
+    margin-top: 12px;
+}
+
+/* ===== GOLD DIVIDER ===== */
+header::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    margin: 25px auto 0;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact p {
+    font-size: 0.95rem;
+    color: #bbbbbb;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+}
+
+section:nth-of-type(1) { animation-delay: 0.3s; }
+section:nth-of-type(2) { animation-delay: 0.6s; }
+section:nth-of-type(3) { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SECTION TITLES ===== */
+h3 {
+    font-size: 1.4rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h3::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin-top: 6px;
+    background: #b11226;
+}
+
+/* ===== SUB TITLES ===== */
+h4 {
+    margin-top: 10px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ===== ARTICLE CARDS ===== */
+article {
+    margin-bottom: 25px;
+    padding: 18px 22px;
+    border-left: 3px solid #b11226;
+    background: rgba(177,18,38,0.05);
+    transition: all 0.3s ease;
+}
+
+article:hover {
+    background: rgba(177,18,38,0.1);
+    border-left: 3px solid #d4af37;
+    box-shadow: 0 0 15px rgba(212,175,55,0.3);
+}
+
+/* ===== LISTS ===== */
+ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: 70px;
+    text-align: center;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social a {
+    text-decoration: none;
+    color: #e8e8e8;
+    margin: 0 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social i {
+    margin-right: 6px;
+}
+
+/* Hover glow */
+.social a:hover {
+    color: #d4af37;
+    text-shadow: 0 0 10px rgba(212,175,55,0.7);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    body {
+        padding: 40px 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .contact {
+        gap: 12px;
+    }
+
+    article {
+        padding: 15px;
+    }
+}
